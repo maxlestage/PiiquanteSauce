@@ -46,6 +46,7 @@ exports.modifySauce = (req, res, next) => {
         .then(() => res.status(200).json({ message: 'Objet modifié !' }))
         .catch((error) => res.status(400).json({ error }));
 };
+
 /*
 Ci-dessus, nous exploitons la méthode updateOne() dans notre modèle Thing .
 Cela nous permet de mettre à jour le Thing qui correspond à l'objet que nous passons comme premier argument.
@@ -84,6 +85,16 @@ exports.getAllSauce = (req, res, next) => {
         .then((sauces) => res.status(200).json(sauces))
         .catch((error) => res.status(400).json({ error }));
 };
+
+exports.likeSauce = (req, res, next) => {
+    Sauce.findByIdAndUpdate(
+        { _id: req.params.id },
+        { ...sauceObject, _id: req.params.id }
+    )
+        .then(() => res.status(200).json({ message: 'Objet modifié !' }))
+        .catch((error) => res.status(400).json({ error }));
+};
+
 /* Dans l'exemple ci-dessus app.get() : ,
 nous utilisons la méthode find() dans notre modèle Mongoose afin de renvoyer un tableau contenant tous les Things dans notre base de données.
 À présent, si vous ajoutez un Thing , il doit s'afficher immédiatement sur votre page d'articles en vente.
