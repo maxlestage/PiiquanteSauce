@@ -87,10 +87,9 @@ exports.getAllSauce = (req, res, next) => {
 };
 
 exports.likeSauce = (req, res, next) => {
-    Sauce.findByIdAndUpdate(
-        { _id: req.params.id },
-        { ...sauceObject, _id: req.params.id }
-    )
+    Sauce.findByIdAndUpdate(req.params.id, {
+        $addToSet: { likes: req.body.id },
+    })
         .then(() => res.status(200).json({ message: 'Objet modifié !' }))
         .catch((error) => res.status(400).json({ error }));
 };

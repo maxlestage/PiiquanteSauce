@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// Fonction pour générer un token unique
 module.exports = (req, res, next) => {
     try {
         const token = req.headers.authorization.split(' ')[1];
