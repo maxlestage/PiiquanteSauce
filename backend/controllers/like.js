@@ -23,7 +23,7 @@ exports.userLikeOrDislikeSauce = (req, res) => {
                 //         $push: { usersDisliked: req.body.userId },
                 //     }
                 // ).then(() => res.status(200).json(s));
-                console.log('On aime plus');
+                console.log('On aime plus du tout');
                 // expected output: "Mangoes and papayas are $2.79 a pound."
                 break;
 
