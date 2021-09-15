@@ -1,4 +1,4 @@
 /node_modules
 .DS_Store
 .idea
-/backend/images
+/backend/images/
