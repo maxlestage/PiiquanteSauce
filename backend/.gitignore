@@ -1,1 +1,8 @@
 /node_modules
+.DS_Store
+.idea
+!.gitkeep
+backend/.eslintrc.json
+backend/.prettierrc.json
+backend/images/*.jpg
+backend/images/*.png
