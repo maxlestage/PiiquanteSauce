@@ -1,4 +1,5 @@
-const http = require('http');
+const https = require('https');
+// Remplacement de http par https afin de bénéficier des certificats Secure Sockets Layer (SSL)
 const app = require('./app');
 
 const normalizePort = (val) => {
@@ -36,7 +37,7 @@ const errorHandler = (error) => {
     }
 };
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 server.on('error', errorHandler);
 server.on('listening', () => {
