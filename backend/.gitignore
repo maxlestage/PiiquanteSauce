@@ -2,7 +2,7 @@
 .DS_Store
 .idea
 !.gitkeep
-backend/.eslintrc.json
-backend/.prettierrc.json
+/.eslintrc.json
+/.prettierrc.json
 backend/images/*.jpg
 backend/images/*.png
