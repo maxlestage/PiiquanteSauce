@@ -8,6 +8,8 @@ const multer = require("../middleware/multer-config");
 // Import du controller pour faire le lien avec l'appel de route.
 const sauceCtrl = require("../controllers/sauce");
 const likeCtrl = require("../controllers/like");
+// const modifySauceCtrl = require("../controllers/modifySauce");
+
 // /api/sauces/routeActionController.
 router.get("/", auth, sauceCtrl.getAllSauce);
 router.post("/", auth, multer, sauceCtrl.createSauce);

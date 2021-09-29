@@ -1,4 +1,5 @@
 const Sauce = require("../models/Sauce");
+const jwt = require("jsonwebtoken");
 const fs = require("fs");
 
 // Création d'une sauce.
@@ -19,56 +20,42 @@ exports.createSauce = (req, res) => {
 
 //  Modification de la sauce.
 exports.modifySauce = (req, res) => {
-  const sauceObject = req.file
-    ? {
-        ...JSON.parse(req.body.sauce),
-        imageUrl: `${req.protocol}://${req.get("host")}/images/${
-          req.file.filename
-        }`,
-      }
-    : { ...req.body };
-  if (res.locals.userId === req.body.userId) {
-    // On peut mettre à jour une sauce si les éléments de la réponse locals.userId sont strictement identique à la valeur de la requete sur l'userId également.
-    Sauce.updateOne(
-      { _id: req.params.id },
-      { ...sauceObject, _id: req.params.id }
-    )
-      .then(() => res.status(200).json({ message: "Objet modifié !" }))
-      .catch((error) => res.status(400).json({ error }));
-    console.log("ça passe");
+  let sauceObject;
+  if (req.file) {
+    sauceObject = {
+      ...JSON.parse(req.body.sauce),
+      imageUrl: `${req.protocol}://${req.get("host")}/images/${
+        req.file.filename
+      }`,
+    };
   } else {
-    Sauce.updateOne()
-      .then(() =>
-        res.status(200).json({
-          message: "Tu n'as pas le privilège pour modifier cette sauce.",
-        })
-      )
-      .catch((error) => res.status(400).json({ error }));
-    console.log("ça passe pas");
+    sauceObject = { ...req.body };
   }
+  // On peut mettre à jour une sauce si les éléments de la réponse locals.userId sont strictement identique à la valeur de la requete sur l'userId également.
+  Sauce.updateOne(
+    { _id: req.params.id, userId: sauceObject.userId },
+    { ...sauceObject }
+  )
+    .then(() => res.status(200).json({ message: "Objet modifié !" }))
+    .catch((error) => res.status(400).json({ error }));
+  console.log("ça passe");
 };
 
 // Suppression de la sauce.
 exports.deleteSauce = (req, res) => {
   Sauce.findOne({ _id: req.params.id })
     .then((sauce) => {
-      const filename = sauce.imageUrl.split("/images/")[1];
-      fs.unlink(`images/${filename}`, () => {
-        if (res.locals.userId === req.body.userId) {
+      const token = req.headers.authorization.split(" ")[1],
+        decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET"),
+        userId = decodedToken.userId;
+      if (req.body.userId && req.body.userId !== userId) {
+        const filename = sauce.imageUrl.split("/images/")[1];
+        fs.unlink(`images/${filename}`, () => {
           Sauce.deleteOne({ _id: req.params.id })
             .then(() => res.status(200).json({ message: "Objet supprimé !" }))
             .catch((error) => res.status(400).json({ error }));
-        } else {
-          Sauce.deleteOne()
-            .then(() =>
-              res.status(200).json({
-                message: "Tu n'as pas le privilège pour supprimer cette sauce.",
-              })
-            )
-            .catch((error) => res.status(400).json({ error }));
-          console.log("Tu n'as pas le privilège pour supprimer cette sauce.");
-        }
-      });
+        });
+      }
     })
     .catch((error) => res.status(500).json({ error }));
 };
@@ -86,3 +73,5 @@ exports.getAllSauce = (req, res) => {
     .then((sauces) => res.status(200).json(sauces))
     .catch((error) => res.status(400).json({ error }));
 };
+
+let data = "data";

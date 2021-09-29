@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const sauceSchema = mongoose.Schema({
-  userId: { type: String, required: true },
+  userId: { type: String, required: true, immutable: true },
   name: { type: String, required: true, minLength: 5 }, // Doit contenir minimum 5 caractères.
   manufacturer: { type: String, required: true },
   description: { type: String, required: true },
