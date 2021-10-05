@@ -20,6 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
+// Connexion avec la base de données:
 mongoose
   .connect(
     "mongodb+srv://Piiquante_00:ONhp9pmsZv7RcpVQ@cluster0.elxn6.mongodb.net/PiiquanteSauce?retryWrites=true&w=majority",
