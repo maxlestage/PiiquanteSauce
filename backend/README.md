@@ -16,6 +16,16 @@
 
 - Then, install with `$ npm install` the `package.json` file will be read and allow the installation of all the libraries that the project needs.
 
+### Lancer le server :
+
+    $ nodemon server.js
+
+The server starts up and you can test the application locally
+
+#### Note :
+
+If necessary, at any time you can during the execution of `nodemon` enter `rs` that will have the effect of restarting the server in order to take into account the important modifications on this application.
+
 ### Package version :
 
 - express: ^4.17.1
