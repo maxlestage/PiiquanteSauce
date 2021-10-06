@@ -16,7 +16,7 @@
 
 - Then, install with `$ npm install` the `package.json` file will be read and allow the installation of all the libraries that the project needs.
 
-### Lancer le server :
+### Start the server :
 
     $ nodemon server.js
 
