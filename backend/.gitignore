@@ -4,6 +4,6 @@
 !.gitkeep
 /.eslintrc.json
 /.prettierrc.json
-backend/images/*.jpg
-backend/images/*.png
+/backend/images/*.jpg
+/backend/images/*.png
 .env
