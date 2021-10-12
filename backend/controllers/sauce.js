@@ -42,7 +42,7 @@ exports.modifySauce = (req, res) => {
 
 // Suppression de la sauce.
 exports.deleteSauce = (req, res) => {
-  Sauce.findOne({ _id: req.params.id })
+  Sauce.findOne({ _id: req.params.id, userId: res.locals.userId })
     .then((sauce) => {
       const filename = sauce.imageUrl.split("/images/")[1];
       fs.unlink(`images/${filename}`, () => {

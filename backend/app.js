@@ -6,6 +6,9 @@ const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
 const path = require("path");
 
+// Middleware qui gère des autorisations sur notre app.
+const auth = require("../middleware/auth");
+
 //? CORS signifie « Cross Origin Resource Sharing »
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -32,6 +35,6 @@ mongoose
 app.use(bodyParser.json());
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use("/api/auth", userRoutes);
-app.use("/api/sauces", sauceRoutes);
+app.use("/api/sauces", auth, sauceRoutes); // Ajout de auth afin de ne pas l'écrire 10 fois dans la route sauce
 
 module.exports = app;
