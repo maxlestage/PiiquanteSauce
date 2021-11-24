@@ -62,3 +62,23 @@ If necessary, at any time you can during the execution of `nodemon` enter `rs` t
 - mongoose: ^6.0.4
 - mongoose-unique-validator: ^2.0.3
 - multer: ^1.4.3
+
+## Présentation du projet
+
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.001.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.002.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.003.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.004.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.005.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.006.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.007.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.008.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.009.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.010.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.011.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.012.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.013.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.014.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.015.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.016.jpeg)
+![PowerPoint Piiquante](https://github.com/maxlestage/PiiquanteSauce/blob/master/PowerPoint/Piiquante.017.jpeg)
